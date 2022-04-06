@@ -2,7 +2,7 @@
 
 主要功能：实时获取微博热搜榜动态，主要检测tag为“爆”的热搜，以及热搜榜一和上升速度最快的热搜，并提供消息提示框提醒和shell提醒两种方式。（弹窗功能仅支持Win系统）
 
-## 使用方法：
+## 使用方法
 
 ```bash
 weiboSpider> python .\BoomDetecter.py --help
@@ -58,3 +58,4 @@ weiboSpider> python .\BoomDetecter.py --log --duration 20
 ## 二次开发
 
 代码写的很简单，二次开发难度也很容易，欢迎随意二次开发。
+在weibo.py中还有一些单独操作热搜榜数据的内容，可以玩玩。

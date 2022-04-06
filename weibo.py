@@ -11,7 +11,7 @@ import os
 import pickle
 import warnings
 
-from config import TMP_PATH, HEADERS
+from config import TMP_PATH
 
 if not os.path.exists(TMP_PATH):
     os.mkdir(TMP_PATH)
@@ -26,7 +26,7 @@ def getHots():
     while True:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            res = requests.get("https://weibo.com/ajax/side/hotSearch", headers=HEADERS)
+            res = requests.get("https://weibo.com/ajax/side/hotSearch")
         try:
             datas = json.loads(res.text)
             break
@@ -113,6 +113,6 @@ def printMenu(hots, Menus, save=True, filter=None):
 
 
 def filters(hot):
-    return '5735' in hot['word'] or '黑匣子' in hot['word'] or '飞机' in hot['word']
+    return '春' in hot['word']
 
 # printMenu(getHots(), Menus, filter=filters)
